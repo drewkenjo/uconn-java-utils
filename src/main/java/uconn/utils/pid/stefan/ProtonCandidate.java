@@ -19,12 +19,14 @@ public class ProtonCandidate extends Candidate {
 
 
 
-    /**
+     /**
     * return ProtonCandidate instance
     * @param applycuts the list of cuts required to apply
     */
-    public static ProtonCandidate getProtonCandidate(int ipart, Bank recbank, Bank trajbank) {
+    public static ProtonCandidate getProtonCandidate(int ipart, Bank recbank, Bank trajbank, boolean isinbending) {
         ProtonCandidate candidate = new ProtonCandidate();
+        if(!isinbending) candidate.setOUTBENDING();
+
         if(recbank!=null) {
             candidate.setPID(recbank.getInt("pid",ipart));
             candidate.setStatus(recbank.getShort("status",ipart));
