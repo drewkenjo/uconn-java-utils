@@ -2,6 +2,14 @@ package uconn.utils.pid.stefan;
 
 public class ElectronCuts {
 
+    /// This is the enum for some cut levels
+    protected enum Level {
+        LOOSE, ///< loose
+        MEDIUM, ///< medium
+        TIGHT ///< tight
+    }
+
+
     /**
      * Cherenkov nphe cut
      * @param nphe number of photoelectrons
@@ -70,7 +78,7 @@ public class ElectronCuts {
      * @param v pcal_lv
      * @param w pcal_lw
      */
-    public static boolean EC_hit_position_fiducial_cut_homogeneous(int pcal_sector, double lv, double lw) {
+    public static boolean EC_hit_position_fiducial_cut_homogeneous(int pcal_sector, double lv, double lw, Level lvl) {
 
         // Cut using the natural directions of the scintillator bars/ fibers:
 
@@ -101,6 +109,18 @@ public class ElectronCuts {
         double max_v = max_v_loose_inb[isec];
         double min_w = min_w_loose_inb[isec];
         double max_w = max_w_loose_inb[isec];
+
+        if(lvl == Level.MEDIUM) {
+            min_v = min_v_med_inb[isec];
+            max_v = max_v_med_inb[isec];
+            min_w = min_w_med_inb[isec];
+            max_w = max_w_med_inb[isec];
+        } else if(lvl == Level.TIGHT) {
+            min_v = min_v_tight_inb[isec];
+            max_v = max_v_tight_inb[isec];
+            min_w = min_w_tight_inb[isec];
+            max_w = max_w_tight_inb[isec];
+        }
 
         return lv > min_v && lv < max_v && lw > min_w && lw < max_w;
     }
