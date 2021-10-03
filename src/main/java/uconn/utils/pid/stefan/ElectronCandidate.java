@@ -27,14 +27,14 @@ public class ElectronCandidate extends Candidate {
     * groovy script to use ElectronCandidate class for finding good electron
     */
 
-
-
-    /**
+     /**
     * return ElectronCandidate instance
     * @param applycuts the list of cuts required to apply
     */
-    public static ElectronCandidate getElectronCandidate(int ipart, Bank recbank, Bank calbank, Bank ccbank, Bank trajbank) {
+    public static ElectronCandidate getElectronCandidate(int ipart, Bank recbank, Bank calbank, Bank ccbank, Bank trajbank, boolean isinbending) {
         ElectronCandidate candidate = new ElectronCandidate();
+        if(!isinbending) candidate.setOUTBENDING();
+
         if(recbank!=null) {
             candidate.setPID(recbank.getInt("pid",ipart));
             candidate.setVZ(recbank.getFloat("vz",ipart));
