@@ -9,7 +9,7 @@ import uconn.utils.pid.Candidate;
 public class ProtonCandidate extends Candidate {
     /// This is the enum for proton cut types
     public enum Cut {
-        PROTON_PID, ///< cut on PDG code
+        PID, ///< cut on PDG code
         DC_FIDUCIAL_REG1, ///< fiducial DC cut for region 1
         DC_FIDUCIAL_REG2, ///< fiducial DC cut for region 2
         DC_FIDUCIAL_REG3, ///< fiducial DC cut for region 3
@@ -93,7 +93,7 @@ public class ProtonCandidate extends Candidate {
      */
     public boolean isproton(Cut ...applycuts) {
         for(Cut thiscut: applycuts) {
-            if(thiscut == Cut.PROTON_PID) {
+            if(thiscut == Cut.PID) {
                 if(pid==null) return false;
                 else if(pid!=2212) return false;
 

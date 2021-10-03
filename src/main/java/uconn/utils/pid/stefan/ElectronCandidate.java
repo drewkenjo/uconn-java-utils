@@ -9,7 +9,7 @@ import uconn.utils.pid.Candidate;
 public class ElectronCandidate extends Candidate {
     /// This is the enum for electron cut types
     public enum Cut {
-        ELE_PID, ///< cut on PDG code
+        PID, ///< cut on PDG code
         CC_NPHE, ///< nphe cut
         EC_OUTER_VS_INNER, ///< outer vs inner energy deposit
         EC_SAMPLING, ///< sampling fraction
@@ -114,7 +114,7 @@ public class ElectronCandidate extends Candidate {
      */
     public boolean iselectron(Cut ...applycuts) {
         for(Cut thiscut: applycuts) {
-            if(thiscut == Cut.ELE_PID) {
+            if(thiscut == Cut.PID) {
                 if(pid==null) return false;
                 else if(pid!=11) return false;
 

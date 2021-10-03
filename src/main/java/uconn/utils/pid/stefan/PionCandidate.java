@@ -15,7 +15,7 @@ public class PionCandidate extends Candidate {
 
     /// This is the enum for pi+ cut types
     public enum Cut {
-        PION_PID, ///< cut on PDG code
+        PID, ///< cut on PDG code
         CHI2PID_CUT, ///< cut on chi2pid
         DC_FIDUCIAL_REG1, ///< fiducial DC cut for region 1
         DC_FIDUCIAL_REG2, ///< fiducial DC cut for region 2
@@ -103,7 +103,7 @@ public class PionCandidate extends Candidate {
      */
     public boolean ispim(Cut ...applycuts) {
         for(Cut thiscut: applycuts) {
-            if(thiscut == Cut.PION_PID) {
+            if(thiscut == Cut.PID) {
                 if(pid==null) return false;
                 else if(pid!=-211) return false;
             } else if(thiscut == Cut.CHI2PID_CUT) {
@@ -145,7 +145,7 @@ public class PionCandidate extends Candidate {
      */
     public boolean ispip(Cut ...applycuts) {
         for(Cut thiscut: applycuts) {
-            if(thiscut == Cut.PION_PID) {
+            if(thiscut == Cut.PID) {
                 if(pid==null) return false;
                 else if(pid!=211) return false;
             } else if(thiscut == Cut.CHI2PID_CUT) {

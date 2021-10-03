@@ -11,7 +11,7 @@ import uconn.utils.pid.Candidate;
 public class PhotonCandidate extends Candidate {
     /// This is the enum for photon cut types
     public enum Cut {
-        PHOTON_PID, ///< cut on PDG code
+        PID, ///< cut on PDG code
         EC_FIDUCIAL, ///< fiducial EC cut
         BETA ///< cut on beta
     }
@@ -96,7 +96,7 @@ public class PhotonCandidate extends Candidate {
         for(Cut thiscut: applycuts) {
             Cuts.put(thiscut, false);
 
-            if(thiscut == Cut.PHOTON_PID) {
+            if(thiscut == Cut.PID) {
                 if(pid == null) return false;
                 else if(pid != 22) return false;
 
