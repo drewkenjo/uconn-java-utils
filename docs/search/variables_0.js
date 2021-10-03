@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['cc_5fnphe_128',['CC_NPHE',['../classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a737ad98a7e316d1a74ccced3d411b395',1,'uconn::utils::pid::stefan::ElectronCandidate::Cut']]],
-  ['chi2pid_129',['chi2pid',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#a6f5977f01a49c9a1d9e4dcf1d0ae1360',1,'uconn::utils::pid::Candidate']]],
-  ['chi2pid_5fcut_130',['CHI2PID_CUT',['../classuconn_1_1utils_1_1pid_1_1stefan_1_1PionCandidate.html#a797738eb77fd196982c3e2e4c19fcabe',1,'uconn::utils::pid::stefan::PionCandidate::Cut']]]
+  ['beta_0',['BETA',['../classuconn_1_1utils_1_1pid_1_1stefan_1_1PhotonCandidate.html#acdd06dbedd29a7c7d493d4d0c450b06b',1,'uconn::utils::pid::stefan::PhotonCandidate::Cut']]],
+  ['beta_1',['beta',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#a360bd878df4a5331b93b49014e21beb2',1,'uconn::utils::pid::Candidate']]]
 ];
