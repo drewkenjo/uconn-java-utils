@@ -5,13 +5,24 @@ public class Candidate {
      * \section Introduction
      * It's a collection of Java classes to be used for PID and event selections.
      * Go to Classes and Examples.
-    */
+     */
 
     /// This is the enum for magnetic field configuation
     protected enum MagField {
         INBENDING, ///< inbending
         OUTBENDING ///< outbending
     }
+
+
+    /** A cosntructor
+     * @param ipart particle index
+     */
+    public Candidate(int ipart) {
+        this.ipart = ipart;
+    }
+
+
+    public final int ipart;
 
     protected MagField field = MagField.INBENDING; ///< magnetic field, INBENDING by default
     protected Float nphe = null; ///< number of photoelectrons
@@ -172,6 +183,46 @@ public class Candidate {
 
 
     /**
+     * @return pcal sector
+     */
+    public Integer getPCALsector() {
+        return pcal_sector;
+    }
+
+
+    /**
+     * @return dc sector
+     */
+    public Integer getDCsector() {
+        return dc_sector;
+    }
+
+
+    /**
+     * @return DC1 x
+     */
+    public Float getDC1x() {
+        return traj_x1;
+    }
+
+ 
+    /**
+     * @return DC1 y
+     */
+    public Float getDC1y() {
+        return traj_y1;
+    }
+
+ 
+    /**
+     * @return DC1 z
+     */
+    public Float getDC1z() {
+        return traj_z1;
+    }
+
+ 
+    /**
      * determine DC sector
      * @param x x-coordinate in DC region
      * @param y y-coordinate in DC region
@@ -192,11 +243,11 @@ public class Candidate {
     }
 
     /**
-    * @param region specify DC region
-    * @param x x-coordinate in DC region
-    * @param y y-coordinate in DC region
-    * @param z z-coordinate in DC region
-    */
+     * @param region specify DC region
+     * @param x x-coordinate in DC region
+     * @param y y-coordinate in DC region
+     * @param z z-coordinate in DC region
+     */
     public void setDCxyz(int region, Number x, Number y, Number z) {
         if(region==1) {
             this.traj_x1 = x==null ? null : x.floatValue();
