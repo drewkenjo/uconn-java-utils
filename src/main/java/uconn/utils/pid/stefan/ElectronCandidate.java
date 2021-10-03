@@ -23,20 +23,29 @@ public class ElectronCandidate extends Candidate {
 
 
     /**
-    * \example goodelectron.groovy
-    * groovy script to use ElectronCandidate class for finding good electron
-    */
+     * \example goodelectron.groovy
+     * groovy script to use ElectronCandidate class for finding good electron
+     */
 
 
 
-     /**
-    * return ElectronCandidate instance
-    * @param ipart particle index
-    * @param recbank,calbank,ccbank,trajbank particle, calorimeter, cherenkov and trajectory banks
-    * @param isinbending true for inbending, false for outbending
-    */
+    /** A Constructor
+     * @param ipart particle index
+     */
+    public ElectronCandidate(int ipart) {
+        super(ipart);
+    }
+
+
+
+    /**
+     * return ElectronCandidate instance
+     * @param ipart particle index
+     * @param recbank,calbank,ccbank,trajbank particle, calorimeter, cherenkov and trajectory banks
+     * @param isinbending true for inbending, false for outbending
+     */
     public static ElectronCandidate getElectronCandidate(int ipart, Bank recbank, Bank calbank, Bank ccbank, Bank trajbank, boolean isinbending) {
-        ElectronCandidate candidate = new ElectronCandidate();
+        ElectronCandidate candidate = new ElectronCandidate(ipart);
         if(!isinbending) candidate.setOUTBENDING();
 
         if(recbank!=null) {
@@ -77,8 +86,8 @@ public class ElectronCandidate extends Candidate {
 
 
     /**
-    * @return LorentzVector instance
-    */
+     * @return LorentzVector instance
+     */
     public LorentzVector getLorentzVector() {
         LorentzVector vec = null;
         if(px!=null && py!=null && pz!=null) {
@@ -91,8 +100,8 @@ public class ElectronCandidate extends Candidate {
 
 
     /**
-    * testing against all electron cuts
-    */
+     * testing against all electron cuts
+     */
     public boolean iselectron() {
         return iselectron(Cut.values());
     }
@@ -100,9 +109,9 @@ public class ElectronCandidate extends Candidate {
 
 
     /**
-    * assembly of multiple electron cuts
-    * @param applycuts the list of cuts required to apply
-    */
+     * assembly of multiple electron cuts
+     * @param applycuts the list of cuts required to apply
+     */
     public boolean iselectron(Cut ...applycuts) {
         for(Cut thiscut: applycuts) {
             if(thiscut == Cut.ELE_PID) {

@@ -26,20 +26,29 @@ public class PionCandidate extends Candidate {
 
 
     /**
-    * \example goodpion.groovy
-    * groovy script to use PionCandidate class for finding good positive pion
-    */
+     * \example goodpion.groovy
+     * groovy script to use PionCandidate class for finding good positive pion
+     */
+
+
+
+    /** A Constructor
+     * @param ipart particle index
+     */
+    public PionCandidate(int ipart) {
+        super(ipart);
+    }
 
 
 
     /**
-    * return PionCandidate instance
-    * @param ipart particle index
-    * @param recbank,trajbank particle and trajectory banks
-    * @param isinbending true for inbending, false for outbending
-    */
+     * return PionCandidate instance
+     * @param ipart particle index
+     * @param recbank,trajbank particle and trajectory banks
+     * @param isinbending true for inbending, false for outbending
+     */
     public static PionCandidate getPionCandidate(int ipart, Bank recbank, Bank trajbank, boolean isinbending) {
-        PionCandidate candidate = new PionCandidate();
+        PionCandidate candidate = new PionCandidate(ipart);
         if(!isinbending) candidate.setOUTBENDING();
 
         if(recbank!=null) {
@@ -67,8 +76,8 @@ public class PionCandidate extends Candidate {
 
 
     /**
-    * @return LorentzVector instance
-    */
+     * @return LorentzVector instance
+     */
     public LorentzVector getLorentzVector() {
         LorentzVector vec = null;
         if(px!=null && py!=null && pz!=null) {
@@ -80,8 +89,8 @@ public class PionCandidate extends Candidate {
 
 
     /**
-    * testing against all pi- cuts
-    */
+     * testing against all pi- cuts
+     */
     public boolean ispim() {
         return ispim(Cut.values());
     }
@@ -89,9 +98,9 @@ public class PionCandidate extends Candidate {
 
 
     /**
-    * assembly of multiple pi- cuts
-    * @param applycuts the list of cuts required to apply
-    */
+     * assembly of multiple pi- cuts
+     * @param applycuts the list of cuts required to apply
+     */
     public boolean ispim(Cut ...applycuts) {
         for(Cut thiscut: applycuts) {
             if(thiscut == Cut.PION_PID) {
@@ -122,8 +131,8 @@ public class PionCandidate extends Candidate {
 
 
     /**
-    * testing against all pi+ cuts
-    */
+     * testing against all pi+ cuts
+     */
     public boolean ispip() {
         return ispip(Cut.values());
     }
@@ -131,9 +140,9 @@ public class PionCandidate extends Candidate {
 
 
     /**
-    * assembly of multiple pi+ cuts
-    * @param applycuts the list of cuts required to apply
-    */
+     * assembly of multiple pi+ cuts
+     * @param applycuts the list of cuts required to apply
+     */
     public boolean ispip(Cut ...applycuts) {
         for(Cut thiscut: applycuts) {
             if(thiscut == Cut.PION_PID) {

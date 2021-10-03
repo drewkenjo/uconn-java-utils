@@ -20,14 +20,23 @@ public class ProtonCandidate extends Candidate {
 
 
 
-     /**
-    * return ProtonCandidate instance
-    * @param ipart particle index
-    * @param recbank,trajbank particle and trajectory banks
-    * @param isinbending true for inbending, false for outbending
-    */
+    /** A Constructor
+     * @param ipart particle index
+     */
+    public ProtonCandidate(int ipart) {
+        super(ipart);
+    }
+
+
+
+    /**
+     * return ProtonCandidate instance
+     * @param ipart particle index
+     * @param recbank,trajbank particle and trajectory banks
+     * @param isinbending true for inbending, false for outbending
+     */
     public static ProtonCandidate getProtonCandidate(int ipart, Bank recbank, Bank trajbank, boolean isinbending) {
-        ProtonCandidate candidate = new ProtonCandidate();
+        ProtonCandidate candidate = new ProtonCandidate(ipart);
         if(!isinbending) candidate.setOUTBENDING();
 
         if(recbank!=null) {
@@ -56,8 +65,8 @@ public class ProtonCandidate extends Candidate {
 
 
     /**
-    * @return LorentzVector instance
-    */
+     * @return LorentzVector instance
+     */
     public LorentzVector getLorentzVector() {
         LorentzVector vec = null;
         if(px!=null && py!=null && pz!=null) {
@@ -70,8 +79,8 @@ public class ProtonCandidate extends Candidate {
 
 
     /**
-    * testing against all proton cuts
-    */
+     * testing against all proton cuts
+     */
     public boolean isproton() {
         return isproton(Cut.values());
     }
@@ -79,9 +88,9 @@ public class ProtonCandidate extends Candidate {
 
 
     /**
-    * assembly of multiple proton cuts
-    * @param applycuts the list of cuts required to apply
-    */
+     * assembly of multiple proton cuts
+     * @param applycuts the list of cuts required to apply
+     */
     public boolean isproton(Cut ...applycuts) {
         for(Cut thiscut: applycuts) {
             if(thiscut == Cut.PROTON_PID) {

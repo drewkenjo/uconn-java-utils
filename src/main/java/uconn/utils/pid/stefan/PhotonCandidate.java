@@ -4,7 +4,9 @@ import org.jlab.jnp.hipo4.data.Bank;
 import org.jlab.clas.physics.LorentzVector;
 import org.jlab.detector.base.DetectorType;
 import java.util.stream.IntStream;
+import java.util.EnumMap;
 import uconn.utils.pid.Candidate;
+
 
 public class PhotonCandidate extends Candidate {
     /// This is the enum for photon cut types
@@ -15,21 +17,32 @@ public class PhotonCandidate extends Candidate {
     }
 
 
+    EnumMap<Cut, Boolean> Cuts = new EnumMap<>(Cut.class);
+
 
     /**
-    * groovy script to use PhotonCandidate class for finding good photon
-    */
+     * groovy script to use PhotonCandidate class for finding good photon
+     */
 
 
 
-     /**
-    * return PhotonCandidate instance
-    * @param ipart particle index
-    * @param recbank,calbank particle and calorimeter banks
-    * @param isinbending true for inbending, false for outbending
-    */
+    /** A Constructor
+     * @param ipart particle index
+     */
+    public PhotonCandidate(int ipart) {
+        super(ipart);
+    }
+
+
+
+    /**
+     * return PhotonCandidate instance
+     * @param ipart particle index
+     * @param recbank,calbank particle and calorimeter banks
+     * @param isinbending true for inbending, false for outbending
+     */
     public static PhotonCandidate getPhotonCandidate(int ipart, Bank recbank, Bank calbank, boolean isinbending) {
-        PhotonCandidate candidate = new PhotonCandidate();
+        PhotonCandidate candidate = new PhotonCandidate(ipart);
         if(!isinbending) candidate.setOUTBENDING();
 
         if(recbank!=null) {
@@ -53,8 +66,8 @@ public class PhotonCandidate extends Candidate {
 
 
     /**
-    * @return LorentzVector instance
-    */
+     * @return LorentzVector instance
+     */
     public LorentzVector getLorentzVector() {
         LorentzVector vec = null;
         if(px!=null && py!=null && pz!=null) {
@@ -67,8 +80,8 @@ public class PhotonCandidate extends Candidate {
 
 
     /**
-    * testing against all photon cuts
-    */
+     * testing against all photon cuts
+     */
     public boolean isphoton() {
         return isphoton(Cut.values());
     }
@@ -76,11 +89,13 @@ public class PhotonCandidate extends Candidate {
 
 
     /**
-    * assembly of multiple photon cuts
-    * @param applycuts the list of cuts required to apply
-    */
+     * assembly of multiple photon cuts
+     * @param applycuts the list of cuts required to apply
+     */
     public boolean isphoton(Cut ...applycuts) {
         for(Cut thiscut: applycuts) {
+            Cuts.put(thiscut, false);
+
             if(thiscut == Cut.PHOTON_PID) {
                 if(pid == null) return false;
                 else if(pid != 22) return false;
@@ -96,6 +111,8 @@ public class PhotonCandidate extends Candidate {
             } else {
                 return false;
             }
+
+            Cuts.put(thiscut, true);
         }
         return true;
     }
