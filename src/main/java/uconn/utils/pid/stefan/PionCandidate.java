@@ -34,7 +34,9 @@ public class PionCandidate extends Candidate {
 
     /**
     * return PionCandidate instance
-    * @param applycuts the list of cuts required to apply
+    * @param ipart particle index
+    * @param recbank,trajbank particle and trajectory banks
+    * @param isinbending true for inbending, false for outbending
     */
     public static PionCandidate getPionCandidate(int ipart, Bank recbank, Bank trajbank, boolean isinbending) {
         PionCandidate candidate = new PionCandidate();

@@ -22,7 +22,9 @@ public class ProtonCandidate extends Candidate {
 
      /**
     * return ProtonCandidate instance
-    * @param applycuts the list of cuts required to apply
+    * @param ipart particle index
+    * @param recbank,trajbank particle and trajectory banks
+    * @param isinbending true for inbending, false for outbending
     */
     public static ProtonCandidate getProtonCandidate(int ipart, Bank recbank, Bank trajbank, boolean isinbending) {
         ProtonCandidate candidate = new ProtonCandidate();

@@ -22,7 +22,9 @@ public class PhotonCandidate extends Candidate {
 
      /**
     * return PhotonCandidate instance
-    * @param applycuts the list of cuts required to apply
+    * @param ipart particle index
+    * @param recbank,calbank particle and calorimeter banks
+    * @param isinbending true for inbending, false for outbending
     */
     public static PhotonCandidate getPhotonCandidate(int ipart, Bank recbank, Bank calbank, boolean isinbending) {
         PhotonCandidate candidate = new PhotonCandidate();

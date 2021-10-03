@@ -283,6 +283,7 @@ public class HadronCuts {
 
     /** chi2pid cut for hadrons
      * @param chi2pid chi2pid value
+     * @param p hadron momentum
      * @param pid hadron PID code
     */
     public static boolean Chi2pid_cut(double chi2pid, double p, int pid) {

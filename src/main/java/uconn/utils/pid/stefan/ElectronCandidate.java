@@ -29,7 +29,9 @@ public class ElectronCandidate extends Candidate {
 
      /**
     * return ElectronCandidate instance
-    * @param applycuts the list of cuts required to apply
+    * @param ipart particle index
+    * @param recbank,calbank,ccbank,trajbank particle, calorimeter, cherenkov and trajectory banks
+    * @param isinbending true for inbending, false for outbending
     */
     public static ElectronCandidate getElectronCandidate(int ipart, Bank recbank, Bank calbank, Bank ccbank, Bank trajbank, boolean isinbending) {
         ElectronCandidate candidate = new ElectronCandidate();

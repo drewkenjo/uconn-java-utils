@@ -75,8 +75,9 @@ public class ElectronCuts {
 
     /**
      * @param pcal_sector sector of hits in PCAL
-     * @param v pcal_lv
-     * @param w pcal_lw
+     * @param lv pcal_lv
+     * @param lw pcal_lw
+     * @param lvl fiducial cut level
      */
     public static boolean EC_hit_position_fiducial_cut_homogeneous(int pcal_sector, double lv, double lw, Level lvl) {
 
@@ -339,6 +340,7 @@ public class ElectronCuts {
     /**
      * @param pcal_sector sector of hits in PCAL
      * @param partvz Z in vertex
+     * @param isinbending true for inbending, false for outbending
      */
     public static boolean DC_z_vertex_cut(int pcal_sector, double partvz, boolean isinbending) {
 

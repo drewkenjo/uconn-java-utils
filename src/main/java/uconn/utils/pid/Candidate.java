@@ -114,7 +114,7 @@ public class Candidate {
 
 
     /**
-     * @param pid set particle status
+     * @param status set particle status
      */
     public void setStatus(Number status) {
         this.status = status==null ? null : status.shortValue();
