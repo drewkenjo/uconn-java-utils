@@ -26,6 +26,7 @@ public class Candidate {
     protected Float py = null; ///< px momentum
     protected Float pz = null; ///< px momentum
     protected Float vz = null; ///< z vertex
+    protected Float beta = null; ///< beta value
     protected Float chi2pid = null; ///< chi2pid value
     protected Float dvz = null; ///< the difference between trigger particle vz and candidate vz
     protected Float traj_x1 = null; ///< x-position of the track at the detector surface (cm) at region 1
@@ -77,6 +78,14 @@ public class Candidate {
      */
     public void setVZ(Number vz) {
         this.vz = vz==null ? null : vz.floatValue();
+    }
+
+
+    /**
+     * @param beta set beta value for particle
+     */
+    public void setBETA(Number beta) {
+        this.beta = beta==null ? null : beta.floatValue();
     }
 
 
