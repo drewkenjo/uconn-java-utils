@@ -36,8 +36,10 @@ public class PionCandidate extends Candidate {
     * return PionCandidate instance
     * @param applycuts the list of cuts required to apply
     */
-    public static PionCandidate getPionCandidate(int ipart, Bank recbank, Bank trajbank) {
+    public static PionCandidate getPionCandidate(int ipart, Bank recbank, Bank trajbank, boolean isinbending) {
         PionCandidate candidate = new PionCandidate();
+        if(!isinbending) candidate.setOUTBENDING();
+
         if(recbank!=null) {
             candidate.setPID(recbank.getInt("pid",ipart));
             candidate.setCHI2PID(recbank.getFloat("chi2pid",ipart));
