@@ -117,7 +117,7 @@ public class ElectronCandidate extends Candidate {
                 else if(!ElectronCuts.EC_sampling_fraction_cut(p, pcal_sector, pcal_energy, ecin_energy, ecout_energy)) return false;
 
             } else if(thiscut == Cut.EC_FIDUCIAL) {
-                if(pcal_energy==null || pcal_lv==null || pcal_lw==null) return false;
+                if(pcal_sector==null || pcal_lv==null || pcal_lw==null) return false;
                 else if(!ElectronCuts.EC_hit_position_fiducial_cut_homogeneous(pcal_sector, pcal_lv, pcal_lw)) return false;
 
             } else if(thiscut == Cut.DC_FIDUCIAL_REG1) {
