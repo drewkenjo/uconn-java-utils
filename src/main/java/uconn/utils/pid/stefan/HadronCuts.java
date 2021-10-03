@@ -291,6 +291,7 @@ public class HadronCuts {
         double coef;
         if(pid==211) coef = 0.88;
         else if(pid==-211) coef = 0.93;
+        else if(pid==2212) return Math.abs(chi2pid)<2.64;
         else return false;
 
         boolean chi2cut = false;
