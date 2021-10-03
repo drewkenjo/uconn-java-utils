@@ -20,6 +20,8 @@ public class PhotonCandidate extends Candidate {
     * groovy script to use PhotonCandidate class for finding good photon
     */
 
+
+
      /**
     * return PhotonCandidate instance
     * @param ipart particle index
@@ -61,6 +63,7 @@ public class PhotonCandidate extends Candidate {
         }
         return vec;
     }
+
 
 
     /**

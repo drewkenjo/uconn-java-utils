@@ -27,6 +27,8 @@ public class ElectronCandidate extends Candidate {
     * groovy script to use ElectronCandidate class for finding good electron
     */
 
+
+
      /**
     * return ElectronCandidate instance
     * @param ipart particle index
@@ -85,6 +87,7 @@ public class ElectronCandidate extends Candidate {
         }
         return vec;
     }
+
 
 
     /**
