@@ -24,7 +24,7 @@ public class PhotonCandidate extends Candidate {
     * return PhotonCandidate instance
     * @param applycuts the list of cuts required to apply
     */
-    public static PhotonCandidate getPhotonCandidate(int ipart, Bank recbank, Bank calbank, Bank ccbank, Bank trajbank, boolean isinbending) {
+    public static PhotonCandidate getPhotonCandidate(int ipart, Bank recbank, Bank calbank, boolean isinbending) {
         PhotonCandidate candidate = new PhotonCandidate();
         if(!isinbending) candidate.setOUTBENDING();
 
