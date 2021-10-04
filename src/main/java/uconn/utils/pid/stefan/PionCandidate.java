@@ -1,17 +1,12 @@
 package uconn.utils.pid.stefan;
 
-import org.jlab.clas.physics.LorentzVector;
+import org.jlab.jnp.physics.LorentzVector;
 import org.jlab.detector.base.DetectorType;
 import java.util.stream.IntStream;
 import org.jlab.jnp.hipo4.data.Bank;
 import uconn.utils.pid.Candidate;
 
 public class PionCandidate extends Candidate {
-    /// This is the enum for cut strength
-    public enum Level {
-        STANDARD, ///< standard strength
-        STRICT, ///< strict strength
-    }
 
     /// This is the enum for pi+ cut types
     public enum Cut {
@@ -89,6 +84,51 @@ public class PionCandidate extends Candidate {
 
 
     /**
+     * @return chi2pid cut
+     */
+    public boolean cut_CHI2PID() {
+        if(pid==null || chi2pid==null || p==null) return false;
+        return HadronCuts.Chi2pid_cut(chi2pid, p, pid);
+    }
+
+
+    /**
+     * @return DC fiducial region 1
+     */
+    public boolean cut_DC_FIDUCIAL_REG1() {
+        if(dc_sector==null || traj_x1==null || traj_y1==null || traj_z1==null || pid==null) return false;
+        return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 1, traj_x1, traj_y1, traj_z1, pid, field==MagField.INBENDING);
+    }
+
+
+    /**
+     * @return DC fiducial region 2
+     */
+    public boolean cut_DC_FIDUCIAL_REG2() {
+        if(dc_sector==null || traj_x2==null || traj_y2==null || traj_z2==null || pid==null) return false;
+        return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 2, traj_x2, traj_y2, traj_z2, pid, field==MagField.INBENDING);
+    }
+
+
+    /**
+     * @return DC fiducial region 3
+     */
+    public boolean cut_DC_FIDUCIAL_REG3() {
+        if(dc_sector==null || traj_x3==null || traj_y3==null || traj_z3==null || pid==null) return false;
+        return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 3, traj_x3, traj_y3, traj_z3, pid, field==MagField.INBENDING);
+    }
+
+
+    /**
+     * @return delta vz cut
+     */
+    public boolean cut_DELTA_VZ() {
+        if(pid==null || dvz==null) return false;
+        return HadronCuts.Delta_vz_cut(pid, dvz);
+    }
+
+
+    /**
      * testing against all pi- cuts
      */
     public boolean ispim() {
@@ -104,23 +144,24 @@ public class PionCandidate extends Candidate {
     public boolean ispim(Cut ...applycuts) {
         for(Cut thiscut: applycuts) {
             if(thiscut == Cut.PID) {
-                if(pid==null) return false;
-                else if(pid!=-211) return false;
+                if(pid == null) return false;
+                else if(pid != -211) return false;
+
             } else if(thiscut == Cut.CHI2PID_CUT) {
-                if(pid==null || chi2pid==null || p==null) return false;
-                else if(!HadronCuts.Chi2pid_cut(chi2pid, p, pid)) return false;
+                 if(!cut_CHI2PID()) return false;
+
             } else if(thiscut == Cut.DC_FIDUCIAL_REG1) {
-                if(dc_sector==null || traj_x1==null || traj_y1==null || traj_z1==null || pid==null) return false;
-                else if(!HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 1, traj_x1, traj_y1, traj_z1, pid, field==MagField.INBENDING)) return false;
+                 if(!cut_DC_FIDUCIAL_REG1()) return false;
+
             } else if(thiscut == Cut.DC_FIDUCIAL_REG2) {
-                if(dc_sector==null || traj_x2==null || traj_y2==null || traj_z2==null || pid==null) return false;
-                else if(!HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 2, traj_x2, traj_y2, traj_z2, pid, field==MagField.INBENDING)) return false;
+                 if(!cut_DC_FIDUCIAL_REG2()) return false;
+
             } else if(thiscut == Cut.DC_FIDUCIAL_REG3) {
-                if(dc_sector==null || traj_x3==null || traj_y3==null || traj_z3==null || pid==null) return false;
-                else if(!HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 3, traj_x3, traj_y3, traj_z3, pid, field==MagField.INBENDING)) return false;
+                 if(!cut_DC_FIDUCIAL_REG3()) return false;
+
             } else if(thiscut == Cut.DELTA_VZ) {
-                if(pid==null || dvz==null) return false;
-                else if(!HadronCuts.Delta_vz_cut(pid, dvz)) return false;
+                 if(!cut_DELTA_VZ()) return false;
+
             } else {
                 return false;
             }
@@ -146,23 +187,24 @@ public class PionCandidate extends Candidate {
     public boolean ispip(Cut ...applycuts) {
         for(Cut thiscut: applycuts) {
             if(thiscut == Cut.PID) {
-                if(pid==null) return false;
-                else if(pid!=211) return false;
+                if(pid == null) return false;
+                else if(pid != 211) return false;
+
             } else if(thiscut == Cut.CHI2PID_CUT) {
-                if(pid==null || chi2pid==null || p==null) return false;
-                else if(!HadronCuts.Chi2pid_cut(chi2pid, p, pid)) return false;
+                 if(!cut_CHI2PID()) return false;
+
             } else if(thiscut == Cut.DC_FIDUCIAL_REG1) {
-                if(dc_sector==null || traj_x1==null || traj_y1==null || traj_z1==null || pid==null) return false;
-                else if(!HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 1, traj_x1, traj_y1, traj_z1, pid, field==MagField.INBENDING)) return false;
+                 if(!cut_DC_FIDUCIAL_REG1()) return false;
+
             } else if(thiscut == Cut.DC_FIDUCIAL_REG2) {
-                if(dc_sector==null || traj_x2==null || traj_y2==null || traj_z2==null || pid==null) return false;
-                else if(!HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 2, traj_x2, traj_y2, traj_z2, pid, field==MagField.INBENDING)) return false;
+                 if(!cut_DC_FIDUCIAL_REG2()) return false;
+
             } else if(thiscut == Cut.DC_FIDUCIAL_REG3) {
-                if(dc_sector==null || traj_x3==null || traj_y3==null || traj_z3==null || pid==null) return false;
-                else if(!HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 3, traj_x3, traj_y3, traj_z3, pid, field==MagField.INBENDING)) return false;
+                 if(!cut_DC_FIDUCIAL_REG3()) return false;
+
             } else if(thiscut == Cut.DELTA_VZ) {
-                if(pid==null || dvz==null) return false;
-                else if(!HadronCuts.Delta_vz_cut(pid, dvz)) return false;
+                 if(!cut_DELTA_VZ()) return false;
+
             } else {
                 return false;
             }

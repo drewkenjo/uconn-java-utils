@@ -1,7 +1,7 @@
 package uconn.utils.pid.stefan;
 
 import org.jlab.jnp.hipo4.data.Bank;
-import org.jlab.clas.physics.LorentzVector;
+import org.jlab.jnp.physics.LorentzVector;
 import org.jlab.detector.base.DetectorType;
 import java.util.stream.IntStream;
 import uconn.utils.pid.Candidate;
