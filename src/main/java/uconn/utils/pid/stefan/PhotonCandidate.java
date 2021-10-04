@@ -12,6 +12,7 @@ public class PhotonCandidate extends Candidate {
     /// This is the enum for photon cut types
     public enum Cut {
         PID, ///< cut on PDG code
+        FORWARD, ///< only forward detector
         EC_FIDUCIAL, ///< fiducial EC cut
         BETA ///< cut on beta
     }
@@ -45,6 +46,7 @@ public class PhotonCandidate extends Candidate {
 
         if(recbank!=null) {
             candidate.setPID(recbank.getInt("pid",ipart));
+            candidate.setStatus(recbank.getShort("status",ipart));
             candidate.setBETA(recbank.getFloat("beta",ipart));
             candidate.setPxyz(recbank.getFloat("px",ipart), recbank.getFloat("py",ipart), recbank.getFloat("pz",ipart));
         }
@@ -107,6 +109,16 @@ public class PhotonCandidate extends Candidate {
 
 
     /**
+     * @return if it is detected in forward
+     */
+    public boolean cut_FORWARD() {
+        if(status==null) return false;
+        return status>=2000 && status<4000;
+    }
+
+
+
+    /**
      * @return beta cut
      */
     public boolean cut_BETA() {
@@ -134,6 +146,9 @@ public class PhotonCandidate extends Candidate {
 
             if(thiscut == Cut.PID) {
                 if(!cut_PID()) return false;
+
+            } else if(thiscut == Cut.FORWARD) {
+                if(!cut_FORWARD()) return false;
 
             } else if(thiscut == Cut.EC_FIDUCIAL) {
                 if(!cut_EC_FIDUCIAL()) return false;
