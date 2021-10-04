@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tight_0',['TIGHT',['../classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCuts.html#aabfcc1fcb66cb2ede3493f0cbd1b1d10',1,'uconn::utils::pid::stefan::ElectronCuts::Level']]],
+  ['tight_0',['TIGHT',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#aabfcc1fcb66cb2ede3493f0cbd1b1d10',1,'uconn::utils::pid::Candidate::Level']]],
   ['traj_5fx1_1',['traj_x1',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#adb59f60616ff7edf7059dd373b12ccd2',1,'uconn::utils::pid::Candidate']]],
   ['traj_5fx2_2',['traj_x2',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#a2c628855b5950f1148f07a887e6d7013',1,'uconn::utils::pid::Candidate']]],
   ['traj_5fx3_3',['traj_x3',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#a0e33384697c7aee0b534c8b514100ec6',1,'uconn::utils::pid::Candidate']]],
