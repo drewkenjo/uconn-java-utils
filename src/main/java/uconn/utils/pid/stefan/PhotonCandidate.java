@@ -17,8 +17,6 @@ public class PhotonCandidate extends Candidate {
     }
 
 
-    EnumMap<Cut, Boolean> Cuts = new EnumMap<>(Cut.class);
-
 
     /**
      * groovy script to use PhotonCandidate class for finding good photon
@@ -80,6 +78,45 @@ public class PhotonCandidate extends Candidate {
 
 
     /**
+     * @return pid cut
+     */
+    public boolean cut_PID() {
+        if(pid == null) return false;
+        return pid == 22;
+    }
+
+
+
+    /**
+     * @return EC fiducial cut with loose cut
+     */
+    public boolean cut_EC_FIDUCIAL() {
+        return cut_EC_FIDUCIAL(Level.LOOSE);
+    }
+
+
+
+    /**
+     * @return EC fiducial cut
+     */
+    public boolean cut_EC_FIDUCIAL(Level eclevel) {
+        if(pcal_sector == null || pcal_lv == null || pcal_lw == null) return false;
+        return ElectronCuts.EC_hit_position_fiducial_cut_homogeneous(pcal_sector, pcal_lv, pcal_lw, eclevel);
+    }
+
+
+
+    /**
+     * @return beta cut
+     */
+    public boolean cut_BETA() {
+        if(beta == null) return false;
+        return beta > 0.9 && beta < 1.1;
+    }
+
+
+
+    /**
      * testing against all photon cuts
      */
     public boolean isphoton() {
@@ -94,25 +131,19 @@ public class PhotonCandidate extends Candidate {
      */
     public boolean isphoton(Cut ...applycuts) {
         for(Cut thiscut: applycuts) {
-            Cuts.put(thiscut, false);
 
             if(thiscut == Cut.PID) {
-                if(pid == null) return false;
-                else if(pid != 22) return false;
+                if(!cut_PID()) return false;
 
             } else if(thiscut == Cut.EC_FIDUCIAL) {
-                if(pcal_sector == null || pcal_lv == null || pcal_lw == null) return false;
-                else if(!ElectronCuts.EC_hit_position_fiducial_cut_homogeneous(pcal_sector, pcal_lv, pcal_lw, ElectronCuts.Level.MEDIUM)) return false;
+                if(!cut_EC_FIDUCIAL()) return false;
 
             } else if(thiscut == Cut.BETA) {
-                if(beta == null) return false;
-                else if(beta > 1.1 || beta < 0.9) return false;
+                if(!cut_BETA()) return false;
 
             } else {
                 return false;
             }
-
-            Cuts.put(thiscut, true);
         }
         return true;
     }

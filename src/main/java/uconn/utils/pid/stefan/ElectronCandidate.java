@@ -5,6 +5,7 @@ import org.jlab.clas.physics.LorentzVector;
 import org.jlab.detector.base.DetectorType;
 import java.util.stream.IntStream;
 import uconn.utils.pid.Candidate;
+import uconn.utils.pid.Candidate.Level;
 
 public class ElectronCandidate extends Candidate {
     /// This is the enum for electron cut types
@@ -100,6 +101,105 @@ public class ElectronCandidate extends Candidate {
 
 
     /**
+     * @return cut on PID
+     */
+    public boolean cut_PID() {
+        if(pid==null) return false;
+        return pid == 11;
+    }
+
+
+
+    /**
+     * @return cut on number of photoelectrons
+     */
+    public boolean cut_NPHE() {
+        if(nphe==null) return false;
+        return ElectronCuts.CC_nphe_cut(nphe);
+    }
+
+
+
+    /**
+     * @return cut on PCAL energy
+     */
+    public boolean cut_EC_OUTER_VS_INNER() {
+        if(pcal_energy==null) return false;
+        return ElectronCuts.EC_outer_vs_EC_inner_cut(pcal_energy);
+    }
+
+
+
+    /**
+     * @return cut on EC sampling
+     */
+    public boolean cut_EC_SAMPLING() {
+        if(p==null || pcal_sector==null || pcal_energy==null || ecin_energy==null || ecout_energy==null) return false;
+        return ElectronCuts.EC_sampling_fraction_cut(p, pcal_sector, pcal_energy, ecin_energy, ecout_energy);
+    }
+
+
+
+    /**
+     * @return fiducial cut on EC
+     */
+    public boolean cut_EC_FIDUCIAL() {
+        return cut_EC_FIDUCIAL(Level.MEDIUM);
+    }
+
+
+
+    /**
+     * @return fiducial cut on EC
+     */
+    public boolean cut_EC_FIDUCIAL(Level eclevel) {
+        if(pcal_sector==null || pcal_lv==null || pcal_lw==null) return false;
+        return ElectronCuts.EC_hit_position_fiducial_cut_homogeneous(pcal_sector, pcal_lv, pcal_lw, eclevel);
+    }
+
+
+
+    /**
+     * @return fiducial cut on DC region 1
+     */
+    public boolean cut_DC_FIDUCIAL_REG1() {
+        if(dc_sector==null || traj_x1==null || traj_y1==null || pid==null) return false;
+        return ElectronCuts.DC_fiducial_cut_XY(dc_sector, 1, traj_x1, traj_y1, pid, field==MagField.INBENDING);
+    }
+
+
+
+    /**
+     * @return fiducial cut on DC region 2
+     */
+    public boolean cut_DC_FIDUCIAL_REG2() {
+        if(dc_sector==null || traj_x2==null || traj_y2==null || pid==null) return false;
+        return ElectronCuts.DC_fiducial_cut_XY(dc_sector, 2, traj_x2, traj_y2, pid, field==MagField.INBENDING);
+    }
+
+
+
+    /**
+     * @return fiducial cut on DC region 3
+     */
+    public boolean cut_DC_FIDUCIAL_REG3() {
+        if(dc_sector==null || traj_x3==null || traj_y3==null || pid==null) return false;
+        return ElectronCuts.DC_fiducial_cut_XY(dc_sector, 3, traj_x3, traj_y3, pid, field==MagField.INBENDING);
+    }
+
+
+
+    /**
+     * @return
+     */
+    public boolean cut_DC_VERTEX() {
+        if(pcal_sector==null || vz==null) return false;
+        return ElectronCuts.DC_z_vertex_cut(pcal_sector, vz, field==MagField.INBENDING);
+    }
+
+
+
+    /**
      * testing against all electron cuts
      */
     public boolean iselectron() {
@@ -115,40 +215,31 @@ public class ElectronCandidate extends Candidate {
     public boolean iselectron(Cut ...applycuts) {
         for(Cut thiscut: applycuts) {
             if(thiscut == Cut.PID) {
-                if(pid==null) return false;
-                else if(pid!=11) return false;
+                if(!cut_PID()) return false;
 
             } else if(thiscut == Cut.CC_NPHE) {
-                if(nphe==null) return false;
-                else if(!ElectronCuts.CC_nphe_cut(nphe)) return false;
+                if(!cut_NPHE()) return false;
 
             } else if(thiscut == Cut.EC_OUTER_VS_INNER) {
-                if(pcal_energy==null) return false;
-                else if(!ElectronCuts.EC_outer_vs_EC_inner_cut(pcal_energy)) return false;
+                if(!cut_EC_OUTER_VS_INNER()) return false;
 
             } else if(thiscut == Cut.EC_SAMPLING) {
-                if(p==null || pcal_sector==null || pcal_energy==null || ecin_energy==null || ecout_energy==null) return false;
-                else if(!ElectronCuts.EC_sampling_fraction_cut(p, pcal_sector, pcal_energy, ecin_energy, ecout_energy)) return false;
+                if(!cut_EC_SAMPLING()) return false;
 
             } else if(thiscut == Cut.EC_FIDUCIAL) {
-                if(pcal_sector==null || pcal_lv==null || pcal_lw==null) return false;
-                else if(!ElectronCuts.EC_hit_position_fiducial_cut_homogeneous(pcal_sector, pcal_lv, pcal_lw, ElectronCuts.Level.LOOSE)) return false;
+                if(!cut_EC_FIDUCIAL()) return false;
 
             } else if(thiscut == Cut.DC_FIDUCIAL_REG1) {
-                if(dc_sector==null || traj_x1==null || traj_y1==null || pid==null) return false;
-                else if(!ElectronCuts.DC_fiducial_cut_XY(dc_sector, 1, traj_x1, traj_y1, pid, field==MagField.INBENDING)) return false;
+                if(!cut_DC_FIDUCIAL_REG1()) return false;
 
             } else if(thiscut == Cut.DC_FIDUCIAL_REG2) {
-                if(dc_sector==null || traj_x2==null || traj_y2==null || pid==null) return false;
-                else if(!ElectronCuts.DC_fiducial_cut_XY(dc_sector, 2, traj_x2, traj_y2, pid, field==MagField.INBENDING)) return false;
+                if(!cut_DC_FIDUCIAL_REG2()) return false;
 
             } else if(thiscut == Cut.DC_FIDUCIAL_REG3) {
-                if(dc_sector==null || traj_x3==null || traj_y3==null || pid==null) return false;
-                else if(!ElectronCuts.DC_fiducial_cut_XY(dc_sector, 3, traj_x3, traj_y3, pid, field==MagField.INBENDING)) return false;
+                if(!cut_DC_FIDUCIAL_REG3()) return false;
 
             } else if(thiscut == Cut.DC_VERTEX) {
-                if(pcal_sector==null || vz==null) return false;
-                else if(!ElectronCuts.DC_z_vertex_cut(pcal_sector, vz, field==MagField.INBENDING)) return false;
+                if(!cut_DC_VERTEX()) return false;
 
             } else {
                 return false;
