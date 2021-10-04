@@ -1,14 +1,8 @@
 package uconn.utils.pid.stefan;
 
+import uconn.utils.pid.Candidate.Level;
+
 public class ElectronCuts {
-
-    /// This is the enum for some cut levels
-    protected enum Level {
-        LOOSE, ///< loose
-        MEDIUM, ///< medium
-        TIGHT ///< tight
-    }
-
 
     /**
      * Cherenkov nphe cut
