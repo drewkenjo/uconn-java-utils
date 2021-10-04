@@ -14,6 +14,14 @@ public class Candidate {
     }
 
 
+    /// This is the enum for some cut levels
+    public enum Level {
+        LOOSE, ///< loose
+        MEDIUM, ///< medium
+        TIGHT ///< tight
+    }
+
+
     /** A cosntructor
      * @param ipart particle index
      */
