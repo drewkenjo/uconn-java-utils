@@ -15,7 +15,7 @@ public class ProtonCandidate extends Candidate {
         DC_FIDUCIAL_REG3, ///< fiducial DC cut for region 3
         DELTA_VZ, ///< cut on difference between VZ of Proton candidate and trigger particle
         FORWARD, ///< only forward detector
-        CHI2PID_CUT ///< cut on chi2pid
+        CHI2PID ///< cut on chi2pid
     }
 
 
@@ -172,7 +172,7 @@ public class ProtonCandidate extends Candidate {
             if(thiscut == Cut.PID) {
                 if(!cut_PID()) return false;
 
-            } else if(thiscut == Cut.CHI2PID_CUT) {                                                                                                                                          
+            } else if(thiscut == Cut.CHI2PID) {                                                                                                                                          
                 if(!cut_CHI2PID()) return false;
 
             } else if(thiscut == Cut.FORWARD) {
