@@ -83,18 +83,22 @@ public class ElectronCuts {
         double[] min_v_tight_inb = {19.0, 19.0, 19.0, 19.0, 19.0, 19.0};
         double[] min_v_med_inb   = {14.0, 14.0, 14.0, 14.0, 14.0, 14.0};
         double[] min_v_loose_inb = {9.0,  9.0,  9.0,  9.0,  9.0,  9.0 };
+        double[] min_v_loosest_inb = {5.0,  5.0,  5.0,  5.0,  5.0,  5.0 };
         //
         double[] max_v_tight_inb = {400, 400, 400, 400, 400, 400};
         double[] max_v_med_inb   = {400, 400, 400, 400, 400, 400};
         double[] max_v_loose_inb = {400, 400, 400, 400, 400, 400};
+        double[] max_v_loosest_inb = {400, 400, 400, 400, 400, 400};
         //
         double[] min_w_tight_inb = {19.0, 19.0, 19.0, 19.0, 19.0, 19.0};
         double[] min_w_med_inb   = {14.0, 14.0, 14.0, 14.0, 14.0, 14.0};
         double[] min_w_loose_inb = {9.0,  9.0,  9.0,  9.0,  9.0,  9.0 };
+        double[] min_w_loosest_inb = {5.0,  5.0,  5.0,  5.0,  5.0,  5.0 };
         //
         double[] max_w_tight_inb = {400, 400, 400, 400, 400, 400};
         double[] max_w_med_inb   = {400, 400, 400, 400, 400, 400};
         double[] max_w_loose_inb = {400, 400, 400, 400, 400, 400};
+        double[] max_w_loosest_inb = {400, 400, 400, 400, 400, 400};
 
 
         //////////////////////////////////////////////////////////////
@@ -115,6 +119,11 @@ public class ElectronCuts {
             max_v = max_v_tight_inb[isec];
             min_w = min_w_tight_inb[isec];
             max_w = max_w_tight_inb[isec];
+        } else if(lvl == Level.LOOSEST) {
+            min_v = min_v_loosest_inb[isec];
+            max_v = max_v_loosest_inb[isec];
+            min_w = min_w_loosest_inb[isec];
+            max_w = max_w_loosest_inb[isec];
         }
 
         return lv > min_v && lv < max_v && lw > min_w && lw < max_w;

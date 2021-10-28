@@ -16,6 +16,7 @@ public class Candidate {
 
     /// This is the enum for some cut levels
     public enum Level {
+        LOOSEST, ///< loosest
         LOOSE, ///< loose
         MEDIUM, ///< medium
         TIGHT ///< tight
