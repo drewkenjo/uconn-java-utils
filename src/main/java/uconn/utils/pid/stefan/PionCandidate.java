@@ -15,6 +15,7 @@ public class PionCandidate extends Candidate {
         DC_FIDUCIAL_REG1, ///< fiducial DC cut for region 1
         DC_FIDUCIAL_REG2, ///< fiducial DC cut for region 2
         DC_FIDUCIAL_REG3, ///< fiducial DC cut for region 3
+        FORWARD, ///< only forward detector
         DELTA_VZ, ///< cut on difference between VZ of Pion candidate and trigger particle
     }
 
@@ -48,6 +49,7 @@ public class PionCandidate extends Candidate {
 
         if(recbank!=null) {
             candidate.setPID(recbank.getInt("pid",ipart));
+            candidate.setStatus(recbank.getShort("status",ipart));
             candidate.setCHI2PID(recbank.getFloat("chi2pid",ipart));
             candidate.setVZ(recbank.getFloat("vz",ipart));
             candidate.setDVZ(recbank.getFloat("vz",ipart) - recbank.getFloat("vz",0));
@@ -80,6 +82,15 @@ public class PionCandidate extends Candidate {
             vec.setPxPyPzM(px,py,pz,0.13957);
         }
         return vec;
+    }
+
+
+    /**
+     * @return if it is detected in forward
+     */
+    public boolean cut_FORWARD() {
+        if(status==null) return false;
+        return status>=2000 && status<4000;
     }
 
 
