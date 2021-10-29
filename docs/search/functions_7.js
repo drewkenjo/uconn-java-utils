@@ -15,6 +15,5 @@ var searchData=
   ['setpid_12',['setPID',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#aefe0392a9cab91bc75320b0921f62de4',1,'uconn::utils::pid::Candidate']]],
   ['setpxyz_13',['setPxyz',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#ae5845f9e714ccc591ae813000b8913e7',1,'uconn::utils::pid::Candidate']]],
   ['setstatus_14',['setStatus',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#aad0a7190982339eba16b7279726d3d6e',1,'uconn::utils::pid::Candidate']]],
-  ['setvz_15',['setVZ',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#aa8b4cac825ad2554f2611d45ed9e3216',1,'uconn::utils::pid::Candidate']]],
-  ['status_16',['status',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#a20bfd55e2da9fde570719b326d091c9f',1,'uconn::utils::pid::Candidate']]]
+  ['setvz_15',['setVZ',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#aa8b4cac825ad2554f2611d45ed9e3216',1,'uconn::utils::pid::Candidate']]]
 ];

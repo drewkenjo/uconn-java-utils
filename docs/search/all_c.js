@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['outbending_0',['OUTBENDING',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#a5f219a5cd7d6b208b4fac492cb8639ec',1,'uconn::utils::pid::Candidate::MagField']]]
+  ['nphe_0',['nphe',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#a52b403e2197f1bbdbdfc55f42cc41c04',1,'uconn::utils::pid::Candidate']]]
 ];
