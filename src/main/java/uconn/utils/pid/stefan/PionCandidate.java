@@ -158,6 +158,9 @@ public class PionCandidate extends Candidate {
                 if(pid == null) return false;
                 else if(pid != -211) return false;
 
+            } else if(thiscut == Cut.FORWARD) {
+                if(!cut_FORWARD()) return false;
+
             } else if(thiscut == Cut.CHI2PID_CUT) {
                  if(!cut_CHI2PID()) return false;
 
@@ -200,6 +203,9 @@ public class PionCandidate extends Candidate {
             if(thiscut == Cut.PID) {
                 if(pid == null) return false;
                 else if(pid != 211) return false;
+
+            } else if(thiscut == Cut.FORWARD) {
+                if(!cut_FORWARD()) return false;
 
             } else if(thiscut == Cut.CHI2PID_CUT) {
                  if(!cut_CHI2PID()) return false;
