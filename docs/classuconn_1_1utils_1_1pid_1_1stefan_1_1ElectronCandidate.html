@@ -116,6 +116,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac82ce5e05d67617bdb73f6dfd5ebd618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5638817a9ce93906a085f5f1d89d9a87"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a5638817a9ce93906a085f5f1d89d9a87">cut_DC_VERTEX</a> ()</td></tr>
 <tr class="separator:a5638817a9ce93906a085f5f1d89d9a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22bba626bf8cefa41cdb7867aa5576b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a22bba626bf8cefa41cdb7867aa5576b4">failedpid</a> ()</td></tr>
+<tr class="separator:a22bba626bf8cefa41cdb7867aa5576b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe46d05bf4d29f4195573692d08f6dcd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#abe46d05bf4d29f4195573692d08f6dcd">failedpid</a> (<a class="el" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#enumuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_1_1Cut">Cut</a> ...applycuts)</td></tr>
+<tr class="separator:abe46d05bf4d29f4195573692d08f6dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9297aa0fd66f7c0de274122a3c28dfff"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a9297aa0fd66f7c0de274122a3c28dfff">iselectron</a> ()</td></tr>
 <tr class="separator:a9297aa0fd66f7c0de274122a3c28dfff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2797f4314c9619848d9c52be5de3c91"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#aa2797f4314c9619848d9c52be5de3c91">iselectron</a> (<a class="el" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#enumuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_1_1Cut">Cut</a> ...applycuts)</td></tr>
@@ -539,7 +543,7 @@ cut on PDG code </td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>fiducial cut on EC </dd></dl>
 <div class="fragment"><div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                                     {</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ad7ed7b2cdd9def7792f1e116f73723a4">cut_EC_FIDUCIAL</a>(Level.MEDIUM);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ad7ed7b2cdd9def7792f1e116f73723a4">cut_EC_FIDUCIAL</a>(Level.LOOSE);</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
 <div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_ad7ed7b2cdd9def7792f1e116f73723a4"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ad7ed7b2cdd9def7792f1e116f73723a4">uconn.utils.pid.stefan.ElectronCandidate.cut_EC_FIDUCIAL</a></div><div class="ttdeci">boolean cut_EC_FIDUCIAL()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:146</div></div>
 </div><!-- fragment -->
@@ -700,6 +704,114 @@ cut on PDG code </td></tr>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="classuconn_1_1utils_1_1pid_1_1Candidate.html#ad9959a0920538314bba0b3eaa2db1c03">pid</a>==<span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classuconn_1_1utils_1_1pid_1_1Candidate.html#ad9959a0920538314bba0b3eaa2db1c03">pid</a> == 11;</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a22bba626bf8cefa41cdb7867aa5576b4" name="a22bba626bf8cefa41cdb7867aa5576b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22bba626bf8cefa41cdb7867aa5576b4">&#9670;&nbsp;</a></span>failedpid() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int failedpid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >testing against all electron cuts </p>
+<div class="fragment"><div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                           {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a22bba626bf8cefa41cdb7867aa5576b4">failedpid</a>(Cut.values());</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    }</div>
+<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_a22bba626bf8cefa41cdb7867aa5576b4"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a22bba626bf8cefa41cdb7867aa5576b4">uconn.utils.pid.stefan.ElectronCandidate.failedpid</a></div><div class="ttdeci">int failedpid()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:205</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abe46d05bf4d29f4195573692d08f6dcd" name="abe46d05bf4d29f4195573692d08f6dcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe46d05bf4d29f4195573692d08f6dcd">&#9670;&nbsp;</a></span>failedpid() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int failedpid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#enumuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_1_1Cut">Cut</a> ...&#160;</td>
+          <td class="paramname"><em>applycuts</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >assembly of multiple electron cuts </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">applycuts</td><td>the list of cuts required to apply </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                                           {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        <span class="keywordtype">int</span> ifail = 0;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <span class="keywordflow">for</span>(Cut thiscut: applycuts) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            <span class="keywordflow">if</span>(thiscut == Cut.PID) {</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a36ea958bcaf4271770441e71e7bc043b">cut_PID</a>()) <span class="keywordflow">return</span> ifail;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.CC_NPHE) {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a1d0795ca4406aeab72bb006abb70d9ae">cut_NPHE</a>()) <span class="keywordflow">return</span> ifail;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.EC_OUTER_VS_INNER) {</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a1811565a91d10f8ab29b2b2e93715afc">cut_EC_OUTER_VS_INNER</a>()) <span class="keywordflow">return</span> ifail;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.EC_SAMPLING) {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a2e316f953fd9b990c208e76b9dd46f51">cut_EC_SAMPLING</a>()) <span class="keywordflow">return</span> ifail;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.EC_FIDUCIAL) {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ad7ed7b2cdd9def7792f1e116f73723a4">cut_EC_FIDUCIAL</a>()) <span class="keywordflow">return</span> ifail;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.DC_FIDUCIAL_REG1) {</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#af8ef6c5aeac2b669269c4667c5173535">cut_DC_FIDUCIAL_REG1</a>()) <span class="keywordflow">return</span> ifail;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.DC_FIDUCIAL_REG2) {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ae9d83075342a8111d792b73e3142041f">cut_DC_FIDUCIAL_REG2</a>()) <span class="keywordflow">return</span> ifail;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.DC_FIDUCIAL_REG3) {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ac82ce5e05d67617bdb73f6dfd5ebd618">cut_DC_FIDUCIAL_REG3</a>()) <span class="keywordflow">return</span> ifail;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.DC_VERTEX) {</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a5638817a9ce93906a085f5f1d89d9a87">cut_DC_VERTEX</a>()) <span class="keywordflow">return</span> ifail;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                <span class="keywordflow">return</span> ifail;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            }</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            ifail++;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        }</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    }</div>
+<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_a1811565a91d10f8ab29b2b2e93715afc"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a1811565a91d10f8ab29b2b2e93715afc">uconn.utils.pid.stefan.ElectronCandidate.cut_EC_OUTER_VS_INNER</a></div><div class="ttdeci">boolean cut_EC_OUTER_VS_INNER()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:126</div></div>
+<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_a1d0795ca4406aeab72bb006abb70d9ae"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a1d0795ca4406aeab72bb006abb70d9ae">uconn.utils.pid.stefan.ElectronCandidate.cut_NPHE</a></div><div class="ttdeci">boolean cut_NPHE()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:116</div></div>
+<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_a2e316f953fd9b990c208e76b9dd46f51"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a2e316f953fd9b990c208e76b9dd46f51">uconn.utils.pid.stefan.ElectronCandidate.cut_EC_SAMPLING</a></div><div class="ttdeci">boolean cut_EC_SAMPLING()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:136</div></div>
+<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_a36ea958bcaf4271770441e71e7bc043b"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a36ea958bcaf4271770441e71e7bc043b">uconn.utils.pid.stefan.ElectronCandidate.cut_PID</a></div><div class="ttdeci">boolean cut_PID()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:106</div></div>
+<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_a5638817a9ce93906a085f5f1d89d9a87"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a5638817a9ce93906a085f5f1d89d9a87">uconn.utils.pid.stefan.ElectronCandidate.cut_DC_VERTEX</a></div><div class="ttdeci">boolean cut_DC_VERTEX()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:195</div></div>
+<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_ac82ce5e05d67617bdb73f6dfd5ebd618"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ac82ce5e05d67617bdb73f6dfd5ebd618">uconn.utils.pid.stefan.ElectronCandidate.cut_DC_FIDUCIAL_REG3</a></div><div class="ttdeci">boolean cut_DC_FIDUCIAL_REG3()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:185</div></div>
+<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_ae9d83075342a8111d792b73e3142041f"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ae9d83075342a8111d792b73e3142041f">uconn.utils.pid.stefan.ElectronCandidate.cut_DC_FIDUCIAL_REG2</a></div><div class="ttdeci">boolean cut_DC_FIDUCIAL_REG2()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:175</div></div>
+<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_af8ef6c5aeac2b669269c4667c5173535"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#af8ef6c5aeac2b669269c4667c5173535">uconn.utils.pid.stefan.ElectronCandidate.cut_DC_FIDUCIAL_REG1</a></div><div class="ttdeci">boolean cut_DC_FIDUCIAL_REG1()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:165</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -870,10 +982,10 @@ cut on PDG code </td></tr>
 </table>
 </div><div class="memdoc">
 <p >testing against all electron cuts </p>
-<div class="fragment"><div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                                {</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a9297aa0fd66f7c0de274122a3c28dfff">iselectron</a>(Cut.values());</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    }</div>
-<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_a9297aa0fd66f7c0de274122a3c28dfff"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a9297aa0fd66f7c0de274122a3c28dfff">uconn.utils.pid.stefan.ElectronCandidate.iselectron</a></div><div class="ttdeci">boolean iselectron()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:205</div></div>
+<div class="fragment"><div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                                {</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a9297aa0fd66f7c0de274122a3c28dfff">iselectron</a>(Cut.values());</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    }</div>
+<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_a9297aa0fd66f7c0de274122a3c28dfff"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a9297aa0fd66f7c0de274122a3c28dfff">uconn.utils.pid.stefan.ElectronCandidate.iselectron</a></div><div class="ttdeci">boolean iselectron()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:259</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -906,49 +1018,41 @@ cut on PDG code </td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                                                {</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        <span class="keywordflow">for</span>(Cut thiscut: applycuts) {</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            <span class="keywordflow">if</span>(thiscut == Cut.PID) {</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a36ea958bcaf4271770441e71e7bc043b">cut_PID</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.CC_NPHE) {</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a1d0795ca4406aeab72bb006abb70d9ae">cut_NPHE</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.EC_OUTER_VS_INNER) {</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a1811565a91d10f8ab29b2b2e93715afc">cut_EC_OUTER_VS_INNER</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.EC_SAMPLING) {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a2e316f953fd9b990c208e76b9dd46f51">cut_EC_SAMPLING</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.EC_FIDUCIAL) {</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ad7ed7b2cdd9def7792f1e116f73723a4">cut_EC_FIDUCIAL</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.DC_FIDUCIAL_REG1) {</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#af8ef6c5aeac2b669269c4667c5173535">cut_DC_FIDUCIAL_REG1</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.DC_FIDUCIAL_REG2) {</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ae9d83075342a8111d792b73e3142041f">cut_DC_FIDUCIAL_REG2</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.DC_FIDUCIAL_REG3) {</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ac82ce5e05d67617bdb73f6dfd5ebd618">cut_DC_FIDUCIAL_REG3</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.DC_VERTEX) {</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a5638817a9ce93906a085f5f1d89d9a87">cut_DC_VERTEX</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            }</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        }</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    }</div>
-<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_a1811565a91d10f8ab29b2b2e93715afc"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a1811565a91d10f8ab29b2b2e93715afc">uconn.utils.pid.stefan.ElectronCandidate.cut_EC_OUTER_VS_INNER</a></div><div class="ttdeci">boolean cut_EC_OUTER_VS_INNER()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:126</div></div>
-<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_a1d0795ca4406aeab72bb006abb70d9ae"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a1d0795ca4406aeab72bb006abb70d9ae">uconn.utils.pid.stefan.ElectronCandidate.cut_NPHE</a></div><div class="ttdeci">boolean cut_NPHE()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:116</div></div>
-<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_a2e316f953fd9b990c208e76b9dd46f51"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a2e316f953fd9b990c208e76b9dd46f51">uconn.utils.pid.stefan.ElectronCandidate.cut_EC_SAMPLING</a></div><div class="ttdeci">boolean cut_EC_SAMPLING()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:136</div></div>
-<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_a36ea958bcaf4271770441e71e7bc043b"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a36ea958bcaf4271770441e71e7bc043b">uconn.utils.pid.stefan.ElectronCandidate.cut_PID</a></div><div class="ttdeci">boolean cut_PID()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:106</div></div>
-<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_a5638817a9ce93906a085f5f1d89d9a87"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a5638817a9ce93906a085f5f1d89d9a87">uconn.utils.pid.stefan.ElectronCandidate.cut_DC_VERTEX</a></div><div class="ttdeci">boolean cut_DC_VERTEX()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:195</div></div>
-<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_ac82ce5e05d67617bdb73f6dfd5ebd618"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ac82ce5e05d67617bdb73f6dfd5ebd618">uconn.utils.pid.stefan.ElectronCandidate.cut_DC_FIDUCIAL_REG3</a></div><div class="ttdeci">boolean cut_DC_FIDUCIAL_REG3()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:185</div></div>
-<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_ae9d83075342a8111d792b73e3142041f"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ae9d83075342a8111d792b73e3142041f">uconn.utils.pid.stefan.ElectronCandidate.cut_DC_FIDUCIAL_REG2</a></div><div class="ttdeci">boolean cut_DC_FIDUCIAL_REG2()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:175</div></div>
-<div class="ttc" id="aclassuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate_html_af8ef6c5aeac2b669269c4667c5173535"><div class="ttname"><a href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#af8ef6c5aeac2b669269c4667c5173535">uconn.utils.pid.stefan.ElectronCandidate.cut_DC_FIDUCIAL_REG1</a></div><div class="ttdeci">boolean cut_DC_FIDUCIAL_REG1()</div><div class="ttdef"><b>Definition:</b> ElectronCandidate.java:165</div></div>
+<div class="fragment"><div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                                                {</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        <span class="keywordflow">for</span>(Cut thiscut: applycuts) {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>            <span class="keywordflow">if</span>(thiscut == Cut.PID) {</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a36ea958bcaf4271770441e71e7bc043b">cut_PID</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.CC_NPHE) {</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a1d0795ca4406aeab72bb006abb70d9ae">cut_NPHE</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.EC_OUTER_VS_INNER) {</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a1811565a91d10f8ab29b2b2e93715afc">cut_EC_OUTER_VS_INNER</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.EC_SAMPLING) {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a2e316f953fd9b990c208e76b9dd46f51">cut_EC_SAMPLING</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.EC_FIDUCIAL) {</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ad7ed7b2cdd9def7792f1e116f73723a4">cut_EC_FIDUCIAL</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.DC_FIDUCIAL_REG1) {</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#af8ef6c5aeac2b669269c4667c5173535">cut_DC_FIDUCIAL_REG1</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.DC_FIDUCIAL_REG2) {</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ae9d83075342a8111d792b73e3142041f">cut_DC_FIDUCIAL_REG2</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.DC_FIDUCIAL_REG3) {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#ac82ce5e05d67617bdb73f6dfd5ebd618">cut_DC_FIDUCIAL_REG3</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(thiscut == Cut.DC_VERTEX) {</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="classuconn_1_1utils_1_1pid_1_1stefan_1_1ElectronCandidate.html#a5638817a9ce93906a085f5f1d89d9a87">cut_DC_VERTEX</a>()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>            }</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        }</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
