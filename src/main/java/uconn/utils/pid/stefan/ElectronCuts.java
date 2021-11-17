@@ -350,8 +350,8 @@ public class ElectronCuts {
         double vz_min_sect_inb[] = {-13, -13, -13, -13, -13, -13};
         double vz_max_sect_inb[] = { 12,  12,  12,  12,  12,  12};
 
-        double vz_min_sect_outb[] = {-18, -18, -18, -18, -18, -18};
-        double vz_max_sect_outb[] = { 10,  10,  10,  10,  10,  10};
+        double vz_min_sect_outb[] = {-20, -20, -20, -20, -20, -20};
+        double vz_max_sect_outb[] = { 12,  12,  12,  12,  12,  12};
 
         double[] vz_min_sect = new double[6];
         double[] vz_max_sect = new double[6];
