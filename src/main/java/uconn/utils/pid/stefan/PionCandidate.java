@@ -108,7 +108,9 @@ public class PionCandidate extends Candidate {
      */
     public boolean cut_DC_FIDUCIAL_REG1() {
         if(dc_sector==null || traj_x1==null || traj_y1==null || traj_z1==null || pid==null) return false;
-        return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 1, traj_x1, traj_y1, traj_z1, pid, field==MagField.INBENDING);
+        if(field==MagField.INBENDING)
+          return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 1, traj_x1, traj_y1, traj_z1, pid, field==MagField.INBENDING);
+        return ElectronCuts.DC_fiducial_cut_XY(dc_sector, 1, traj_x1, traj_y1, pid, field==MagField.INBENDING);
     }
 
 
@@ -117,7 +119,9 @@ public class PionCandidate extends Candidate {
      */
     public boolean cut_DC_FIDUCIAL_REG2() {
         if(dc_sector==null || traj_x2==null || traj_y2==null || traj_z2==null || pid==null) return false;
-        return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 2, traj_x2, traj_y2, traj_z2, pid, field==MagField.INBENDING);
+        if(field==MagField.INBENDING)
+          return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 2, traj_x2, traj_y2, traj_z2, pid, field==MagField.INBENDING);
+        return ElectronCuts.DC_fiducial_cut_XY(dc_sector, 2, traj_x2, traj_y2, pid, field==MagField.INBENDING);
     }
 
 
@@ -126,7 +130,9 @@ public class PionCandidate extends Candidate {
      */
     public boolean cut_DC_FIDUCIAL_REG3() {
         if(dc_sector==null || traj_x3==null || traj_y3==null || traj_z3==null || pid==null) return false;
-        return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 3, traj_x3, traj_y3, traj_z3, pid, field==MagField.INBENDING);
+        if(field==MagField.INBENDING)
+          return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 3, traj_x3, traj_y3, traj_z3, pid, field==MagField.INBENDING);
+        return ElectronCuts.DC_fiducial_cut_XY(dc_sector, 3, traj_x3, traj_y3, pid, field==MagField.INBENDING);
     }
 
 
@@ -227,6 +233,54 @@ public class PionCandidate extends Candidate {
             }
         }
         return true;
+    }
+
+
+
+    /**
+     * testing against all pi+ cuts
+     */
+    public int pipfailedpid() {
+        return pipfailedpid(Cut.values());
+    }
+
+
+
+    /**
+     * assembly of multiple pi+ cuts
+     * @param applycuts the list of cuts required to apply
+     */
+    public int pipfailedpid(Cut ...applycuts) {
+        int ifail = 0;
+        for(Cut thiscut: applycuts) {
+            if(thiscut == Cut.PID) {
+                if(pid == null) return ifail;
+                else if(pid != 211) return ifail;
+
+            } else if(thiscut == Cut.FORWARD) {
+                if(!cut_FORWARD()) return ifail;
+
+            } else if(thiscut == Cut.CHI2PID_CUT) {
+                 if(!cut_CHI2PID()) return ifail;
+
+            } else if(thiscut == Cut.DC_FIDUCIAL_REG1) {
+                 if(!cut_DC_FIDUCIAL_REG1()) return ifail;
+
+            } else if(thiscut == Cut.DC_FIDUCIAL_REG2) {
+                 if(!cut_DC_FIDUCIAL_REG2()) return ifail;
+
+            } else if(thiscut == Cut.DC_FIDUCIAL_REG3) {
+                 if(!cut_DC_FIDUCIAL_REG3()) return ifail;
+
+            } else if(thiscut == Cut.DELTA_VZ) {
+                 if(!cut_DELTA_VZ()) return ifail;
+
+            } else {
+                return ifail;
+            }
+            ifail++;
+        }
+        return -1;
     }
 
 }

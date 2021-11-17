@@ -109,31 +109,37 @@ public class ProtonCandidate extends Candidate {
 
 
     /**
-     * @return fiducial cut on DC region1
+     * @return DC fiducial region 1
      */
     public boolean cut_DC_FIDUCIAL_REG1() {
         if(dc_sector==null || traj_x1==null || traj_y1==null || traj_z1==null || pid==null) return false;
-            return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 1, traj_x1, traj_y1, traj_z1, pid, field==MagField.INBENDING);
+        if(field==MagField.INBENDING)
+          return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 1, traj_x1, traj_y1, traj_z1, pid, field==MagField.INBENDING);
+        return ElectronCuts.DC_fiducial_cut_XY(dc_sector, 1, traj_x1, traj_y1, pid, field==MagField.INBENDING);
     }
 
 
 
     /**
-     * @return fiducial cut on DC region2
+     * @return DC fiducial region 2
      */
     public boolean cut_DC_FIDUCIAL_REG2() {
         if(dc_sector==null || traj_x2==null || traj_y2==null || traj_z2==null || pid==null) return false;
-            return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 2, traj_x2, traj_y2, traj_z2, pid, field==MagField.INBENDING);
+        if(field==MagField.INBENDING)
+          return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 2, traj_x2, traj_y2, traj_z2, pid, field==MagField.INBENDING);
+        return ElectronCuts.DC_fiducial_cut_XY(dc_sector, 2, traj_x2, traj_y2, pid, field==MagField.INBENDING);
     }
 
 
 
     /**
-     * @return fiducial cut on DC region3
+     * @return DC fiducial region 3
      */
     public boolean cut_DC_FIDUCIAL_REG3() {
         if(dc_sector==null || traj_x3==null || traj_y3==null || traj_z3==null || pid==null) return false;
-            return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 3, traj_x3, traj_y3, traj_z3, pid, field==MagField.INBENDING);
+        if(field==MagField.INBENDING)
+          return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 3, traj_x3, traj_y3, traj_z3, pid, field==MagField.INBENDING);
+        return ElectronCuts.DC_fiducial_cut_XY(dc_sector, 3, traj_x3, traj_y3, pid, field==MagField.INBENDING);
     }
 
 
