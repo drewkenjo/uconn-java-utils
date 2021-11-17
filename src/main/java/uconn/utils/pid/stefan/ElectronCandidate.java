@@ -144,7 +144,7 @@ public class ElectronCandidate extends Candidate {
      * @return fiducial cut on EC
      */
     public boolean cut_EC_FIDUCIAL() {
-        return cut_EC_FIDUCIAL(Level.MEDIUM);
+        return cut_EC_FIDUCIAL(Level.LOOSE);
     }
 
 
@@ -195,6 +195,60 @@ public class ElectronCandidate extends Candidate {
     public boolean cut_DC_VERTEX() {
         if(pcal_sector==null || vz==null) return false;
         return ElectronCuts.DC_z_vertex_cut(pcal_sector, vz, field==MagField.INBENDING);
+    }
+
+
+
+    /**
+     * testing against all electron cuts
+     */
+    public int failedpid() {
+        return failedpid(Cut.values());
+    }
+
+
+
+    /**
+     * assembly of multiple electron cuts
+     * @param applycuts the list of cuts required to apply
+     */
+    public int failedpid(Cut ...applycuts) {
+        int ifail = 0;
+        for(Cut thiscut: applycuts) {
+            if(thiscut == Cut.PID) {
+                if(!cut_PID()) return ifail;
+
+            } else if(thiscut == Cut.CC_NPHE) {
+                if(!cut_NPHE()) return ifail;
+
+            } else if(thiscut == Cut.EC_OUTER_VS_INNER) {
+                if(!cut_EC_OUTER_VS_INNER()) return ifail;
+
+            } else if(thiscut == Cut.EC_SAMPLING) {
+                if(!cut_EC_SAMPLING()) return ifail;
+
+            } else if(thiscut == Cut.EC_FIDUCIAL) {
+                if(!cut_EC_FIDUCIAL()) return ifail;
+
+            } else if(thiscut == Cut.DC_FIDUCIAL_REG1) {
+                if(!cut_DC_FIDUCIAL_REG1()) return ifail;
+
+            } else if(thiscut == Cut.DC_FIDUCIAL_REG2) {
+                if(!cut_DC_FIDUCIAL_REG2()) return ifail;
+
+            } else if(thiscut == Cut.DC_FIDUCIAL_REG3) {
+                if(!cut_DC_FIDUCIAL_REG3()) return ifail;
+
+            } else if(thiscut == Cut.DC_VERTEX) {
+                if(!cut_DC_VERTEX()) return ifail;
+
+            } else {
+                return ifail;
+            }
+
+            ifail++;
+        }
+        return -1;
     }
 
 
