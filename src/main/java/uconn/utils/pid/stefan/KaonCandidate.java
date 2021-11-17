@@ -113,7 +113,7 @@ public class KaonCandidate extends Candidate {
         if(dc_sector==null || traj_x2==null || traj_y2==null || traj_z2==null || pid==null) return false;
         if(field==MagField.INBENDING)
           return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 2, traj_x2, traj_y2, traj_z2, pid, field==MagField.INBENDING);
-        return ElectronCuts.DC_fiducial_cut_XY(dc_sector, 2, traj_x1, traj_y1, pid, field==MagField.INBENDING);
+        return ElectronCuts.DC_fiducial_cut_XY(dc_sector, 2, traj_x2, traj_y2, pid, field==MagField.INBENDING);
     }
 
 
@@ -124,7 +124,7 @@ public class KaonCandidate extends Candidate {
         if(dc_sector==null || traj_x3==null || traj_y3==null || traj_z3==null || pid==null) return false;
         if(field==MagField.INBENDING)
           return HadronCuts.DC_fiducial_cut_theta_phi(dc_sector, 3, traj_x3, traj_y3, traj_z3, pid, field==MagField.INBENDING);
-        return ElectronCuts.DC_fiducial_cut_XY(dc_sector, 3, traj_x1, traj_y1, pid, field==MagField.INBENDING);
+        return ElectronCuts.DC_fiducial_cut_XY(dc_sector, 3, traj_x3, traj_y3, pid, field==MagField.INBENDING);
     }
 
 
