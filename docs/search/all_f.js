@@ -12,9 +12,10 @@ var searchData=
   ['setpcalenergy_9',['setPCALenergy',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#ac1d4ef58b7038dd1af4e40052320b96f',1,'uconn::utils::pid::Candidate']]],
   ['setpcalsector_10',['setPCALsector',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#a69e6fb1e20c2debc746549500292f456',1,'uconn::utils::pid::Candidate']]],
   ['setpcalvw_11',['setPCALvw',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#a937afa77eb1d9bedc31c095b5e82c785',1,'uconn::utils::pid::Candidate']]],
-  ['setpid_12',['setPID',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#aefe0392a9cab91bc75320b0921f62de4',1,'uconn::utils::pid::Candidate']]],
-  ['setpxyz_13',['setPxyz',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#ae5845f9e714ccc591ae813000b8913e7',1,'uconn::utils::pid::Candidate']]],
-  ['setstatus_14',['setStatus',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#aad0a7190982339eba16b7279726d3d6e',1,'uconn::utils::pid::Candidate']]],
-  ['setvz_15',['setVZ',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#aa8b4cac825ad2554f2611d45ed9e3216',1,'uconn::utils::pid::Candidate']]],
-  ['status_16',['status',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#a20bfd55e2da9fde570719b326d091c9f',1,'uconn::utils::pid::Candidate']]]
+  ['setpcalxyz_12',['setPCALxyz',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#a7df76202c7d3aa330b40a377429110af',1,'uconn::utils::pid::Candidate']]],
+  ['setpid_13',['setPID',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#aefe0392a9cab91bc75320b0921f62de4',1,'uconn::utils::pid::Candidate']]],
+  ['setpxyz_14',['setPxyz',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#ae5845f9e714ccc591ae813000b8913e7',1,'uconn::utils::pid::Candidate']]],
+  ['setstatus_15',['setStatus',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#aad0a7190982339eba16b7279726d3d6e',1,'uconn::utils::pid::Candidate']]],
+  ['setvz_16',['setVZ',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#aa8b4cac825ad2554f2611d45ed9e3216',1,'uconn::utils::pid::Candidate']]],
+  ['status_17',['status',['../classuconn_1_1utils_1_1pid_1_1Candidate.html#a20bfd55e2da9fde570719b326d091c9f',1,'uconn::utils::pid::Candidate']]]
 ];
