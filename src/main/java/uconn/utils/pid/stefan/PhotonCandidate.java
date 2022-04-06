@@ -57,6 +57,7 @@ public class PhotonCandidate extends Candidate {
             if(calbank.getByte("layer",i) == 1) {
                 candidate.setPCALsector(calbank.getByte("sector",i));
                 candidate.setPCALvw(calbank.getFloat("lv",i), calbank.getFloat("lw",i));
+                candidate.setPCALxyz(calbank.getFloat("x",i), calbank.getFloat("y",i), calbank.getFloat("z",i));
             }
         });
 

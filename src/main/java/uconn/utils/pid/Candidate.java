@@ -41,6 +41,9 @@ public class Candidate {
     protected Float ecout_energy = 0f; ///< energy deposited in ECout
     protected Float pcal_lv = null; ///< distance on V-side
     protected Float pcal_lw = null; ///< distance on W-side
+    protected Float pcal_x = null; ///< X from PCAL
+    protected Float pcal_y = null; ///< Y from PCAL
+    protected Float pcal_z = null; ///< Z from PCAL
     protected Float p = null; ///< momentum
     protected Float px = null; ///< px momentum
     protected Float py = null; ///< px momentum
@@ -188,6 +191,18 @@ public class Candidate {
     public void setPCALvw(Number lv, Number lw) {
         this.pcal_lv = lv==null ? null : lv.floatValue();
         this.pcal_lw = lw==null ? null : lw.floatValue();
+    }
+
+
+    /**
+     * @param x set PCAL x
+     * @param y set PCAL y
+     * @param z set PCAL z
+     */
+    public void setPCALxyz(Number x, Number y, Number z) {
+        this.pcal_x = x==null ? null : x.floatValue();
+        this.pcal_y = y==null ? null : y.floatValue();
+        this.pcal_z = z==null ? null : z.floatValue();
     }
 
 
