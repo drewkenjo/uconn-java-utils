@@ -65,6 +65,7 @@ public class Candidate {
     protected Integer dc_sector = null; ///< dc sector
     protected Short status = null; ///< particle status
 
+    protected Byte charge = null; ///< particle charge
 
     /**
      * set inbending magnetic field
@@ -143,6 +144,12 @@ public class Candidate {
         this.status = status==null ? null : status.shortValue();
     }
 
+    /**
+     * @param charge set particle charge
+     */
+    public void setCharge(Number charge) {
+        this.charge = charge==null ? null : charge.byteValue();
+    }
 
     /**
      * @param nphe set number of photoelectrons
