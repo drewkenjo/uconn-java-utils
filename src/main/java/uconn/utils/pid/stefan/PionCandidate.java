@@ -90,7 +90,7 @@ public class PionCandidate extends Candidate {
      */
     public boolean cut_FORWARD() {
         if(status==null) return false;
-        return status>=2000 && status<4000;
+        return Math.abs(status)>=2000 && Math.abs(status)<4000;
     }
 
 
